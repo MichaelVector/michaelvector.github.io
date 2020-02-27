@@ -53,6 +53,31 @@
     </entry>
     
     
+    
+    <entry>
+      <title>黑苹果开启原生NTFS读写</title>
+      <link href="/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/"/>
+      <url>/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/</url>
+      
+        <content type="html"><![CDATA[<p>其实苹果系统是支持原生NTFS读写的，因为版权的问题不能开放给普通用户授权使用。但默认是支持的，我们可以通过“旁门左道”来实现。</p><p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="图片列表"></p><a id="more"></a><h2 id="一、打开Bash（终端）——查看所有分区的卷标"><a href="#一、打开Bash（终端）——查看所有分区的卷标" class="headerlink" title="一、打开Bash（终端）——查看所有分区的卷标"></a>一、打开Bash（终端）——查看所有分区的卷标</h2><p>输入<code>diskutil list</code>查看所有硬盘的分区列表</p><p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%A3%81%E7%9B%98%E5%88%97%E8%A1%A8.png" alt="图片列表"></p><h2 id="二、编辑fstab文件（-etc-fstab）"><a href="#二、编辑fstab文件（-etc-fstab）" class="headerlink" title="二、编辑fstab文件（/etc/fstab）"></a>二、编辑fstab文件（/etc/fstab）</h2><p>输入<code>sudo nano /etc/fstab</code>在输入密码回车进行配置</p><p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="fstab"></p><p>根据自己要配置的NTFS分区卷标输入配置信息</p><ul><li>LABEL=D none ntfs rw,auto,nobrowse</li><li>LABEL=E none ntfs rw,auto,nobrowse</li><li>LABEL=F none ntfs rw,auto,nobrowse</li><li>LABEL=VectorW none ntfs rw,auto,nobrowse</li></ul><p>输入盘符以后按<code>Ctrl+X</code>进行保存，在输入<code>Y</code>进行确认，之后回车确认写入文件/etc/fstab保存文件</p><blockquote><p>因为加入了nobrowse所以Finder中看不到修改过的NTFS分区（不加入nobrowse不会生效）所以要使用快捷方式进行访问。<br>用磁盘工具将配置好的NTFS分区卸载再装在使配置生效（无需重启）</p></blockquote><h2 id="三、生成快捷方式"><a href="#三、生成快捷方式" class="headerlink" title="三、生成快捷方式"></a>三、生成快捷方式</h2><p>在终端中输入<br><code>sudo ln -s /Volumes/D ~/Desktop/D</code><br>即可在桌面生成NTFS分区D的快捷方式</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 黑苹果 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 黑苹果 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
