@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>黑苹果开启原生NTFS读写 | Michael Vector</title>
+  <title>XPS15-9560黑苹果教程-macOS-10.14 | Michael Vector</title>
   
   
   <meta name="description" content="Vector的个人主页，存放知识文档、实践教程、学术之类的知识。">
@@ -261,8 +261,8 @@
         
   
     <h1 class="title">
-      <a href="/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/">
-        黑苹果开启原生NTFS读写
+      <a href="/2018/07/18/XPS15-9560%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%95%99%E7%A8%8B/">
+        XPS15-9560黑苹果教程-macOS-10.14
       </a>
     </h1>
   
@@ -277,14 +277,14 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布日期：2018年8月15日</p>
+    <p>发布日期：2018年7月18日</p>
   </a>
 </div>
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-27T12:52:40+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-27T13:11:33+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>最后更新：2020年2月27日</p>
@@ -345,26 +345,85 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <p>其实苹果系统是支持原生NTFS读写的，因为版权的问题不能开放给普通用户授权使用。但默认是支持的，我们可以通过“旁门左道”来实现。</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="图片列表"></p>
+          <p>流程借鉴之前各位大神的记录现在写一篇自己的教程，希望给有需要的朋友使用，方便大家一起黑苹果！</p>
+<fancybox>
+<img src='https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/macOS-9560.jpg'>
+</fancybox>
+
 <a id="more"></a>
 
-<h2 id="一、打开Bash（终端）——查看所有分区的卷标"><a href="#一、打开Bash（终端）——查看所有分区的卷标" class="headerlink" title="一、打开Bash（终端）——查看所有分区的卷标"></a>一、打开Bash（终端）——查看所有分区的卷标</h2><p>输入<code>diskutil list</code>查看所有硬盘的分区列表</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%A3%81%E7%9B%98%E5%88%97%E8%A1%A8.png" alt="图片列表"></p>
-<h2 id="二、编辑fstab文件（-etc-fstab）"><a href="#二、编辑fstab文件（-etc-fstab）" class="headerlink" title="二、编辑fstab文件（/etc/fstab）"></a>二、编辑fstab文件（/etc/fstab）</h2><p>输入<code>sudo nano /etc/fstab</code>在输入密码回车进行配置</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="fstab"></p>
-<p>根据自己要配置的NTFS分区卷标输入配置信息</p>
+<h2 id="本设备详情"><a href="#本设备详情" class="headerlink" title="本设备详情"></a>本设备详情</h2><p><strong>XPS15-9560</strong></p>
 <ul>
-<li>LABEL=D none ntfs rw,auto,nobrowse</li>
-<li>LABEL=E none ntfs rw,auto,nobrowse</li>
-<li>LABEL=F none ntfs rw,auto,nobrowse</li>
-<li>LABEL=VectorW none ntfs rw,auto,nobrowse</li>
+<li>CPU：i7-7700HQ</li>
+<li>内存：原生8G DDR4</li>
+<li>硬盘：三星PM961 NVMe SAMSUNG 256GB + 1TB 机械</li>
+<li>显卡：Intel HD Graphics 630 + nVidia 1050 4GB</li>
+<li>网卡：Broadcom DW1830 <code>原生Intel网卡在XPS无法驱动，只能更换</code></li>
+<li>屏幕：1080P</li>
 </ul>
-<p>输入盘符以后按<code>Ctrl+X</code>进行保存，在输入<code>Y</code>进行确认，之后回车确认写入文件/etc/fstab保存文件</p>
+<hr>
+<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/macOS-9560.jpg" alt="图片"></p>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>8G以上U盘一个（最好空U盘）</li>
+<li>原生DMG文件或者带有Clover引导的DMG文件</li>
+<li><a href="https://imac.hk" target="_blank" rel="noopener">黑苹果乐园</a></li>
+<li><a href="https://blog.daliansky.net" target="_blank" rel="noopener">黑果小兵的部落阁</a></li>
+<li>Win：<strong><code>transMAC</code></strong></li>
+<li>Mac：<strong><code>Etcher</code></strong></li>
+</ul>
+<h2 id="黑苹果安装原理"><a href="#黑苹果安装原理" class="headerlink" title="黑苹果安装原理"></a>黑苹果安装原理</h2><ol>
+<li>用Win下的DMG或者苹果下的.app文件创作一个安装镜像（带EFI分区）</li>
+<li>在启动界面用U盘中的EFI引导进去Clover</li>
+<li>安装黑苹果安装文件，重启</li>
+<li>进入黑苹果安装原生苹果</li>
+</ol>
 <blockquote>
-<p>因为加入了nobrowse所以Finder中看不到修改过的NTFS分区（不加入nobrowse不会生效）所以要使用快捷方式进行访问。<br>用磁盘工具将配置好的NTFS分区卸载再装在使配置生效（无需重启）</p>
+<ul>
+<li>步骤很简单， 但很多人觉得黑苹果装好难，其实最根本就是问题出在驱动问题了，只要有合适的驱动KEXT和配置文件，黑苹果安装10分钟就能完成，和装Windows系统是一样的。</li>
+<li>就是在U盘创建两个分区，一个EFI启动功能分区，一个安装镜像原文件。</li>
+<li>用EFI启动后，只要<code>KEXT</code>和<code>Config.plist</code>文件没有大问题就可以进黑苹果原版安装。</li>
+</ul>
 </blockquote>
-<h2 id="三、生成快捷方式"><a href="#三、生成快捷方式" class="headerlink" title="三、生成快捷方式"></a>三、生成快捷方式</h2><p>在终端中输入<br><code>sudo ln -s /Volumes/D ~/Desktop/D</code><br>即可在桌面生成NTFS分区D的快捷方式</p>
+<h2 id="第一步：创作USB引导安装盘"><a href="#第一步：创作USB引导安装盘" class="headerlink" title="第一步：创作USB引导安装盘"></a>第一步：创作USB引导安装盘</h2><ol>
+<li>下载好原生系统或者懒人包（带Clover）的镜像文件</li>
+<li>用相应的工具写入U盘</li>
+</ol>
+<h2 id="第二步：安装驱动和修改EFI"><a href="#第二步：安装驱动和修改EFI" class="headerlink" title="第二步：安装驱动和修改EFI"></a>第二步：安装驱动和修改EFI</h2><ul>
+<li>将此Github里的<code>KEXT/Other</code>里的文件替换放入你的<code>/EFI/Clover/KEXT/Other</code>里面</li>
+<li>将其他文件也一并替换</li>
+</ul>
+<blockquote>
+<ul>
+<li><strong>替换好开机前请将<code>Bcrm</code>的两个驱动挪在外面，第一次安装会造成失败，困扰我很久，安装完以后在重新放回KEXT里面去。</strong></li>
+<li>建议所有驱动都放在<code>Clover</code>中不要放在系统<code>E/L/S</code>下面，因为一旦因为放入的驱动有问题你没法进系统会造成无法开机。因为放在EFI中出现问题只需要进入EFI修改文件即可，方便以后升级系统或者更新驱动。并不会对系统本身造成影响。</li>
+</ul>
+</blockquote>
+<h2 id="第三步：重启继续安装黑苹果"><a href="#第三步：重启继续安装黑苹果" class="headerlink" title="第三步：重启继续安装黑苹果"></a>第三步：重启继续安装黑苹果</h2><ul>
+<li>不要登陆自己的AppleID，因为是黑苹果，序列号和SM号都没有登记，登陆会造成AppleID被拉入黑名单。</li>
+<li>修改<code>Config.plist</code>的后三项，可以找寻白苹果的三码记录或者自己生成，等FACETIME和iMassage可以用了以后可以享受黑苹果了。</li>
+</ul>
+<h3 id="完善黑苹果"><a href="#完善黑苹果" class="headerlink" title="完善黑苹果"></a>完善黑苹果</h3><ul>
+<li>可以完美自己的屏幕变成HiDPI，在<a href="https://github.com/xzhih/one-key-hidpi" target="_blank" rel="noopener">one-key-hidpi</a>可以自动生成目前屏幕可用的所有HiDPI分辨率。再用RDM软件调整自己的分辨率即可。</li>
+</ul>
+<h3 id="关于此Clover"><a href="#关于此Clover" class="headerlink" title="关于此Clover"></a>关于此Clover</h3><p>加入了几个KEXT进行自定义需求，大家可以按照自己的意愿增减。</p>
+<ul>
+<li><code>DisableTurboBoost.kext</code> <strong>禁用睿频驱动</strong></li>
+</ul>
+<p>因为黑苹果下不需要进行大型数据运算游戏之类，有部分兼容性或者是软件会造成100%的CPU负荷，尤其会自动开启睿频加速，造成无意义的CPU高转和高温。禁用后最高CPU到2.8GHz。不需要可以去掉。</p>
+<ul>
+<li><code>NoTouchID.kext</code> <strong>禁用指纹ID</strong></li>
+</ul>
+<p>对于没有指纹解锁的机型加入这个驱动可以在输密码的时候不出现3秒卡顿。</p>
+<ul>
+<li>已删除plist文件三码苹果信息，大家需要可以自行生成或者找白果三码对应。</li>
+<li><code>VoodooHDA.kext</code> <strong>增加外接显示器HDMI音频输出</strong></li>
+</ul>
+<p>用原生AppleHDA可以完美驱动，但是外接显示器的HDMI不能正确识别，用这个可以自主选择外接HDMI输出，没有外接显示器的朋友可以删掉此KEXT。</p>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><ul>
+<li>感谢大神 <a href="https://github.com/jardenliu" target="_blank" rel="noopener">@jardenliu</a> 提供的10.14文件和黑苹果思路！</li>
+<li>感谢大神 <a href="https://github.com/gunslinger23" target="_blank" rel="noopener">@gunslinger23</a> 提供的10.13文件和黑苹果思路！</li>
+</ul>
 
           
             <br>
@@ -399,7 +458,7 @@
           
         
           
-            <p>本文永久链接是：<a href=https://michaelvector.github.io/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/>https://michaelvector.github.io/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/</a></p>
+            <p>本文永久链接是：<a href=https://michaelvector.github.io/2018/07/18/XPS15-9560%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%95%99%E7%A8%8B/>https://michaelvector.github.io/2018/07/18/XPS15-9560%E9%BB%91%E8%8B%B9%E6%9E%9C%E6%95%99%E7%A8%8B/</a></p>
           
         
       </blockquote>
@@ -427,7 +486,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-27T12:52:40+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-27T13:11:33+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>最后更新：2020年2月27日</p>
@@ -456,30 +515,10 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2018/11/10/%E9%A1%B9%E7%9B%AE%E2%80%9CXXX%E2%80%9D%E5%B7%B2%E8%A2%ABmacOS%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%B8%8D%E8%83%BD%E6%89%93%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="prev" title="项目“XXX”已被macOS使用，不能打开的解决方案">
-                                  
-                                      项目“XXX”已被macOS使用，不能打开的解决方案
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 黑苹果</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
                                 <a href="/2018/07/18/Markdown%E5%AD%A6%E4%B9%A0%E6%A8%A1%E7%89%88/" rel="prev" title="Markdown学习模版">
-                                    
-                                        Markdown学习模版
-                                    
+                                  
+                                      Markdown学习模版
+                                  
                                 </a>
                             </h4>
                             
@@ -490,6 +529,7 @@
                             
                         </span>
                     </section>
+                
                 
             </div>
         
@@ -530,7 +570,7 @@
 
   <script>
     window.subData = {
-      title: '黑苹果开启原生NTFS读写',
+      title: 'XPS15-9560黑苹果教程-macOS-10.14',
       tools: true
     }
   </script>
@@ -638,7 +678,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、打开Bash（终端）——查看所有分区的卷标"><span class="toc-text">一、打开Bash（终端）——查看所有分区的卷标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、编辑fstab文件（-etc-fstab）"><span class="toc-text">二、编辑fstab文件（&#x2F;etc&#x2F;fstab）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、生成快捷方式"><span class="toc-text">三、生成快捷方式</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#本设备详情"><span class="toc-text">本设备详情</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#黑苹果安装原理"><span class="toc-text">黑苹果安装原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步：创作USB引导安装盘"><span class="toc-text">第一步：创作USB引导安装盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步：安装驱动和修改EFI"><span class="toc-text">第二步：安装驱动和修改EFI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步：重启继续安装黑苹果"><span class="toc-text">第三步：重启继续安装黑苹果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#完善黑苹果"><span class="toc-text">完善黑苹果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于此Clover"><span class="toc-text">关于此Clover</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#感谢"><span class="toc-text">感谢</span></a></li></ol>
     </div>
   </section>
 

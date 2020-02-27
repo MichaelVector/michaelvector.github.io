@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>黑苹果开启原生NTFS读写 | Michael Vector</title>
+  <title>Tag: Markdown | Michael Vector</title>
   
   
   <meta name="description" content="Vector的个人主页，存放知识文档、实践教程、学术之类的知识。">
@@ -245,12 +245,25 @@
     <div class='body-wrapper'>
       
 
+
 <div class='l_main'>
   
-
-  
-    <article id="post" class="post white-box card-shadow body-blur article-type-post" itemscope itemprop="blogPost">
+    
       
+  <section class="post-list ">
+    
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box card-shadow body-blur reveal ">
+  
 
 
   <section class='meta'>
@@ -259,13 +272,11 @@
     <div class="meta" id="header-meta">
       
         
-  
-    <h1 class="title">
-      <a href="/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/">
-        黑苹果开启原生NTFS读写
-      </a>
-    </h1>
-  
+  <h2 class="title">
+    <a href="/2018/07/18/Markdown%E5%AD%A6%E4%B9%A0%E6%A8%A1%E7%89%88/">
+      Markdown学习模版
+    </a>
+  </h2>
 
 
       
@@ -277,14 +288,14 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布日期：2018年8月15日</p>
+    <p>发布日期：2018年7月18日</p>
   </a>
 </div>
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-27T12:52:40+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-27T13:10:18+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
     <p>最后更新：2020年2月27日</p>
@@ -297,9 +308,9 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/' rel="nofollow">
+    <a href='/categories/Markdown/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>黑苹果</p>
+      <p>Markdown</p>
     </a>
   </div>
 
@@ -308,19 +319,6 @@
         
           
             
-  
-    <div class="new-meta-item browse busuanzi">
-      <a class='notlink'>
-        <i class="fas fa-eye" aria-hidden="true"></i>
-        <p>
-          <span id="busuanzi_value_page_pv">
-            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
-          </span>
-        </p>
-      </a>
-    </div>
-  
-
 
           
         
@@ -342,200 +340,46 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          <p>其实苹果系统是支持原生NTFS读写的，因为版权的问题不能开放给普通用户授权使用。但默认是支持的，我们可以通过“旁门左道”来实现。</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="图片列表"></p>
-<a id="more"></a>
-
-<h2 id="一、打开Bash（终端）——查看所有分区的卷标"><a href="#一、打开Bash（终端）——查看所有分区的卷标" class="headerlink" title="一、打开Bash（终端）——查看所有分区的卷标"></a>一、打开Bash（终端）——查看所有分区的卷标</h2><p>输入<code>diskutil list</code>查看所有硬盘的分区列表</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%A3%81%E7%9B%98%E5%88%97%E8%A1%A8.png" alt="图片列表"></p>
-<h2 id="二、编辑fstab文件（-etc-fstab）"><a href="#二、编辑fstab文件（-etc-fstab）" class="headerlink" title="二、编辑fstab文件（/etc/fstab）"></a>二、编辑fstab文件（/etc/fstab）</h2><p>输入<code>sudo nano /etc/fstab</code>在输入密码回车进行配置</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="fstab"></p>
-<p>根据自己要配置的NTFS分区卷标输入配置信息</p>
-<ul>
-<li>LABEL=D none ntfs rw,auto,nobrowse</li>
-<li>LABEL=E none ntfs rw,auto,nobrowse</li>
-<li>LABEL=F none ntfs rw,auto,nobrowse</li>
-<li>LABEL=VectorW none ntfs rw,auto,nobrowse</li>
-</ul>
-<p>输入盘符以后按<code>Ctrl+X</code>进行保存，在输入<code>Y</code>进行确认，之后回车确认写入文件/etc/fstab保存文件</p>
-<blockquote>
-<p>因为加入了nobrowse所以Finder中看不到修改过的NTFS分区（不加入nobrowse不会生效）所以要使用快捷方式进行访问。<br>用磁盘工具将配置好的NTFS分区卸载再装在使配置生效（无需重启）</p>
-</blockquote>
-<h2 id="三、生成快捷方式"><a href="#三、生成快捷方式" class="headerlink" title="三、生成快捷方式"></a>三、生成快捷方式</h2><p>在终端中输入<br><code>sudo ln -s /Volumes/D ~/Desktop/D</code><br>即可在桌面生成NTFS分区D的快捷方式</p>
-
-          
-            <br>
-            
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                  
-
-<section class="widget copyright  card-shadow widget-blur desktop mobile">
-  <div class='content'>
-    
-      <blockquote>
-        
-          
-            <p>原创不易，转载请注明出处。</p>
-
-          
-        
-          
-            <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
-
-          
-        
-          
-            <p>本文永久链接是：<a href=https://michaelvector.github.io/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/>https://michaelvector.github.io/2018/08/15/%E9%BB%91%E8%8B%B9%E6%9E%9C%E5%BC%80%E5%90%AF%E5%8E%9F%E7%94%9FNTFS%E8%AF%BB%E5%86%99/</a></p>
-          
-        
-      </blockquote>
-    
-  </div>
-</section>
-
-                
-              
-                
-              
-                
-              
-                
-              
-            
-          
-        </div>
-        
-          <br>
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p>写出所有Markdown网站支持的语法</p>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-27T12:52:40+08:00">
-  <a class='notlink'>
-    <i class="fas fa-save" aria-hidden="true"></i>
-    <p>最后更新：2020年2月27日</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>黑苹果</p></a></div>
-
-
+          <div class="button readmore">
+            <a href="/2018/07/18/Markdown%E5%AD%A6%E4%B9%A0%E6%A8%A1%E7%89%88/" class="flat-box">
+              <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+              阅读全文
+            </a>
+          </div>
         
       
     </div>
+    <!-- 
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/Markdown/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Markdown</a>
+        
+      </div>
+     -->
   </section>
+</article>
 
-
-        
-        
-            <div class="prev-next">
-                
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/2018/11/10/%E9%A1%B9%E7%9B%AE%E2%80%9CXXX%E2%80%9D%E5%B7%B2%E8%A2%ABmacOS%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%B8%8D%E8%83%BD%E6%89%93%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="prev" title="项目“XXX”已被macOS使用，不能打开的解决方案">
-                                  
-                                      项目“XXX”已被macOS使用，不能打开的解决方案
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 黑苹果</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2018/07/18/Markdown%E5%AD%A6%E4%B9%A0%E6%A8%A1%E7%89%88/" rel="prev" title="Markdown学习模版">
-                                    
-                                        Markdown学习模版
-                                    
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/Markdown/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> Markdown</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
-            </div>
-        
-      </section>
-    </article>
-  
-
-  
-    <!-- 显示推荐文章和评论 -->
-
-
-
-  <article class="post white-box comments card-shadow body-blur">
-    <section class="article typo">
-      <h4><i class="fas fa-comments fa-fw" aria-hidden="true"></i>&nbsp;评论</h4>
-      
-      
-      
-      
-        <section id="comments">
-          <div id="valine_container" class="valine_thread">
-            <i class="fas fa-spinner fa-spin fa-fw"></i>
           </div>
-        </section>
+        
       
-    </section>
-  </article>
-
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-  <script>
-    window.subData = {
-      title: '黑苹果开启原生NTFS读写',
-      tools: true
-    }
-  </script>
-
-
+    
+  
 </div>
 <aside class='l_side'>
   
@@ -606,101 +450,6 @@
     
       
     
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-        
-
-
-  <section class="widget toc-wrapper  card-shadow widget-blur desktop mobile">
-    
-  <header>
-    
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
-    
-  </header>
-
-
-    <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、打开Bash（终端）——查看所有分区的卷标"><span class="toc-text">一、打开Bash（终端）——查看所有分区的卷标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、编辑fstab文件（-etc-fstab）"><span class="toc-text">二、编辑fstab文件（&#x2F;etc&#x2F;fstab）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、生成快捷方式"><span class="toc-text">三、生成快捷方式</span></a></li></ol>
-    </div>
-  </section>
-
-
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
-    
-      
-    
-      
-    
-      
-        
-  
-
-  <section class="widget category  card-shadow widget-blur desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Markdown/" href="/categories/Markdown/"
-            id="categoriesMarkdown"
-            ><div class='name'>Markdown</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E4%B8%AA%E4%BA%BA/" href="/categories/%E4%B8%AA%E4%BA%BA/"
-            id="categoriesE4B8AAE4BABA"
-            ><div class='name'>个人</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/" href="/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/"
-            id="categoriesE9BB91E88BB9E69E9C"
-            ><div class='name'>黑苹果</div><div class='badge'>(5)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
       
     
       
@@ -794,6 +543,101 @@
   </div>
 </section>
 
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+      
+    
+      
+        
+  
+
+  <section class="widget tagcloud  card-shadow widget-blur desktop">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/Markdown/" style="font-size: 14px; color: #999">Markdown</a> <a href="/tags/%E4%B8%AA%E4%BA%BA/" style="font-size: 14px; color: #999">个人</a> <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/" style="font-size: 24px; color: #555">黑苹果</a>
+    </div>
+  </section>
+
+
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+      
+    
+      
+    
+      
+        
+  
+
+  <section class="widget category  card-shadow widget-blur desktop">
+    
+  <header>
+    
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <ul class="entry navigation">
+        
+          <li><a class="flat-box"
+            title="/categories/Markdown/" href="/categories/Markdown/"
+            id="categoriesMarkdown"
+            ><div class='name'>Markdown</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E4%B8%AA%E4%BA%BA/" href="/categories/%E4%B8%AA%E4%BA%BA/"
+            id="categoriesE4B8AAE4BABA"
+            ><div class='name'>个人</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/" href="/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/"
+            id="categoriesE9BB91E88BB9E69E9C"
+            ><div class='name'>黑苹果</div><div class='badge'>(5)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -924,35 +768,6 @@
 
 
 
-
-  
-    
-<script src="/js/valine.js"></script>
-
-  
-  <script>
-  var GUEST_INFO = ['nick','mail','link'];
-  var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-    return GUEST_INFO.indexOf(item) > -1
-  });
-  var notify = 'true' == true;
-  var verify = 'true' == true;
-  var valine = new Valine();
-  valine.init({
-    el: '#valine_container',
-    notify: notify,
-    verify: verify,
-    guest_info: guest_info,
-    
-    appId: "gYzYVx8Us3iqjedWdJTVj65q-gzGzoHsz",
-    appKey: "M9WjtBOWsrIOlbOncxOxtCWO",
-    placeholder: "快来评论吧~",
-    pageSize:'10',
-    avatar:'mp',
-    lang:'zh-cn',
-    highlight:'true'
-  })
-  </script>
 
 
 
