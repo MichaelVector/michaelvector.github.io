@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vector.today","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","width":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vector.today","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","width":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="黑苹果多多少少会遇到睡眠问题，这篇问题简析了下苹果睡眠的原理和使用，这样可以更好的给自己电脑不同的睡眠参数达到应有的效果。">
@@ -131,9 +131,9 @@
     <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档<span class="badge">8</span></a>
 
   </li>
-        <li class="menu-item menu-item-category">
+        <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类<span class="badge">4</span></a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -265,14 +265,14 @@
       
         <p>黑苹果多多少少会遇到睡眠问题，这篇问题简析了下苹果睡眠的原理和使用，这样可以更好的给自己电脑不同的睡眠参数达到应有的效果。</p>
 <fancybox>
-<img width=500 data-src='https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png'>
+<img width=500 src='https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png'>
 </fancybox>
 
 <a id="more"></a>
 
 <h2 id="Mac所有睡眠参数"><a href="#Mac所有睡眠参数" class="headerlink" title="Mac所有睡眠参数"></a>Mac所有睡眠参数</h2><p>OSX 的睡眠参数，可以打<code>pmset -g</code>了解一下你的电脑处在什么睡眠模式下：</p>
-<p><img data-src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png" alt="Mac睡眠"></p>
-<img data-src="/%5BMac%E7%9D%A1%E7%9C%A0%5D(https:/tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png)" class="" title="[width] [400] " alt="123">
+<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png" alt="Mac睡眠"></p>
+<img src="/%5BMac%E7%9D%A1%E7%9C%A0%5D(https:/tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png)" class="" title="[width] [400] " alt="123">
 
 
 <ul>
@@ -294,7 +294,7 @@
 <li><code>sleepservice</code>:LZ还没搞清楚这个是干嘛的，请知道的锋友解释下。</li>
 </ul>
 <h2 id="查看当前睡眠模式"><a href="#查看当前睡眠模式" class="headerlink" title="查看当前睡眠模式"></a>查看当前睡眠模式</h2><p>在终端里输入<code>pmset -g | grep hibernatemode</code>查看当前睡眠模式</p>
-<p><img data-src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E5%BD%93%E5%89%8D%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png" alt="当前睡眠模式"><br>关于各种睡眠模式参数：</p>
+<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E5%BD%93%E5%89%8D%E7%9D%A1%E7%9C%A0%E6%A8%A1%E5%BC%8F.png" alt="当前睡眠模式"><br>关于各种睡眠模式参数：</p>
 <ul>
 <li><p><strong>0-老式睡眠模式</strong></p>
 <blockquote>
@@ -478,6 +478,7 @@
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
+          
         <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
@@ -588,7 +589,6 @@
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
