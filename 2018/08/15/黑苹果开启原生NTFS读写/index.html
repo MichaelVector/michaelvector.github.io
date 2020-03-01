@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"vector.today","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","width":280,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"vector.today","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","width":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="其实苹果系统是支持原生NTFS读写的，因为版权的问题不能开放给普通用户授权使用。但默认是支持的，我们可以通过“旁门左道”来实现。">
@@ -263,13 +263,13 @@
 
       
         <p>其实苹果系统是支持原生NTFS读写的，因为版权的问题不能开放给普通用户授权使用。但默认是支持的，我们可以通过“旁门左道”来实现。</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="图片列表"></p>
+<p><img data-src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="图片列表"></p>
 <a id="more"></a>
 
 <h2 id="一、打开Bash（终端）——查看所有分区的卷标"><a href="#一、打开Bash（终端）——查看所有分区的卷标" class="headerlink" title="一、打开Bash（终端）——查看所有分区的卷标"></a>一、打开Bash（终端）——查看所有分区的卷标</h2><p>输入<code>diskutil list</code>查看所有硬盘的分区列表</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%A3%81%E7%9B%98%E5%88%97%E8%A1%A8.png" alt="图片列表"></p>
+<p><img data-src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/%E7%A3%81%E7%9B%98%E5%88%97%E8%A1%A8.png" alt="图片列表"></p>
 <h2 id="二、编辑fstab文件（-etc-fstab）"><a href="#二、编辑fstab文件（-etc-fstab）" class="headerlink" title="二、编辑fstab文件（/etc/fstab）"></a>二、编辑fstab文件（/etc/fstab）</h2><p>输入<code>sudo nano /etc/fstab</code>在输入密码回车进行配置</p>
-<p><img src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="fstab"></p>
+<p><img data-src="https://tuchuang-1258561688.cos.ap-chengdu.myqcloud.com/fstab.png" alt="fstab"></p>
 <p>根据自己要配置的NTFS分区卷标输入配置信息</p>
 <ul>
 <li>LABEL=D none ntfs rw,auto,nobrowse</li>
@@ -537,6 +537,7 @@
   <script src="/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
