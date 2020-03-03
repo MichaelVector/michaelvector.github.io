@@ -425,8 +425,8 @@ td {
 }
 .highlight,
 pre {
-  background: #1d1f21;
-  color: #c5c8c6;
+  background: #2d2d2d;
+  color: #ccc;
   line-height: 1.6;
   margin: 0 auto 20px;
 }
@@ -443,7 +443,7 @@ code {
   word-wrap: break-word;
 }
 .highlight *::selection {
-  background: #373b41;
+  background: #515151;
 }
 .highlight pre {
   border: 0;
@@ -461,7 +461,7 @@ code {
 }
 .highlight figcaption {
   background: #eee;
-  color: #c5c8c6;
+  color: #ccc;
   display: flex;
   font-size: 0.875em;
   justify-content: space-between;
@@ -469,10 +469,10 @@ code {
   padding: 0.5em;
 }
 .highlight figcaption a {
-  color: #c5c8c6;
+  color: #ccc;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #c5c8c6;
+  border-bottom-color: #ccc;
 }
 .highlight .gutter {
   -moz-user-select: none;
@@ -481,14 +481,14 @@ code {
   user-select: none;
 }
 .highlight .gutter pre {
-  background: #000;
-  color: #888f96;
+  background: #1b1b1b;
+  color: #999;
   padding-left: 10px;
   padding-right: 10px;
   text-align: right;
 }
 .highlight .code pre {
-  background: #1d1f21;
+  background: #2d2d2d;
   padding-left: 10px;
   width: 100%;
 }
@@ -504,7 +504,7 @@ pre {
 }
 pre code {
   background: none;
-  color: #c5c8c6;
+  color: #ccc;
   font-size: 0.875em;
   padding: 0;
   text-shadow: none;
@@ -516,14 +516,14 @@ pre .addition {
   background: #008000;
 }
 pre .meta {
-  color: #f0c674;
+  color: #fc6;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
 }
 pre .comment {
-  color: #969896;
+  color: #999;
 }
 pre .variable,
 pre .attribute,
@@ -538,7 +538,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c66;
+  color: #f2777a;
 }
 pre .number,
 pre .preprocessor,
@@ -548,7 +548,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #de935f;
+  color: #f99157;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -561,11 +561,11 @@ pre .ruby .symbol,
 pre .xml .cdata,
 pre .special,
 pre .formula {
-  color: #b5bd68;
+  color: #9c9;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #8abeb7;
+  color: #6cc;
 }
 pre .function,
 pre .python .decorator,
@@ -575,11 +575,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #81a2be;
+  color: #69c;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #b294bb;
+  color: #c9c;
 }
 .blockquote-center {
   border-left: none;
@@ -1284,7 +1284,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff0e36;
+  background: #e4ed3d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1645,7 +1645,7 @@ pre .javascript .function {
   }
 }
 .back-to-top {
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
   transition-delay: 0s;
   transition-duration: 0.2s;
@@ -2417,6 +2417,25 @@ ul.breadcrumb li + li:last-child {
   color: #ccc;
   margin: auto;
 }
+.popular-posts-header {
+  border-bottom: 1px solid #eee;
+  display: block;
+  font-size: 1.125em;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+.popular-posts {
+  padding: 0;
+}
+.popular-posts .popular-posts-item {
+  margin-left: 2em;
+}
+.popular-posts .popular-posts-item .popular-posts-title {
+  font-size: 0.875em;
+  font-weight: normal;
+  line-height: 2.4;
+  margin: 0;
+}
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   body::before {
     animation: rainbow 15s ease infinite;
@@ -2757,6 +2776,21 @@ ul.breadcrumb li + li:last-child {
 }
 .links-of-blogroll-item {
   padding: 0;
+  display: inline-block;
+  margin: 5px 0 0;
+  width: unset;
+}
+.links-of-blogroll-item a,
+.links-of-blogroll-item span.exturl {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 0;
+  max-width: 216px;
+  overflow: hidden;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .content-wrap {
   background: initial;

@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"vector.today.com","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","width":280,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"buttons","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本人使用博客及建站有段时间了，也在不断努力学习。现把学到的知识进行下总结和分享，自我总结的同时也可以让更多人了解并熟悉这个过程。有不足的地方请大家多多指正。互相学习，不断进步！">
+  <meta name="description" content="本人使用博客及建站有段时间了，也在不断努力学习。一直使用大名鼎鼎的Next，还用过大神xaoxuu的volantis，获取到的知识越来越多，现把学到的知识进行下总结和分享，自我总结的同时也可以让更多人了解并熟悉这个过程，可以让更多的盆友拥有自己的博客空间~有不足的地方请大家多多指正。互相学习，不断进步！">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客搭建教程《一、安装同步》">
 <meta property="og:url" content="https://vector.today.com/2020/03/01/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E3%80%8A%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E5%90%8C%E6%AD%A5%E3%80%8B/index.html">
 <meta property="og:site_name" content="Michael Vector">
-<meta property="og:description" content="本人使用博客及建站有段时间了，也在不断努力学习。现把学到的知识进行下总结和分享，自我总结的同时也可以让更多人了解并熟悉这个过程。有不足的地方请大家多多指正。互相学习，不断进步！">
+<meta property="og:description" content="本人使用博客及建站有段时间了，也在不断努力学习。一直使用大名鼎鼎的Next，还用过大神xaoxuu的volantis，获取到的知识越来越多，现把学到的知识进行下总结和分享，自我总结的同时也可以让更多人了解并熟悉这个过程，可以让更多的盆友拥有自己的博客空间~有不足的地方请大家多多指正。互相学习，不断进步！">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cos.ap-chengdu.myqcloud.com/tuchuang-1258561688/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/1%20%281%29.jpg">
 <meta property="og:image" content="https://cos.ap-chengdu.myqcloud.com/tuchuang-1258561688/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/1%20%2810%29.jpg">
@@ -40,7 +40,7 @@
 <meta property="og:image" content="https://cos.ap-chengdu.myqcloud.com/tuchuang-1258561688/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/1%20%2810%29.jpg">
 <meta property="og:image" content="https://cos.ap-chengdu.myqcloud.com/tuchuang-1258561688/%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/1%20%2811%29.jpg">
 <meta property="article:published_time" content="2020-03-01T12:00:00.000Z">
-<meta property="article:modified_time" content="2020-03-03T13:45:40.327Z">
+<meta property="article:modified_time" content="2020-03-03T14:15:08.012Z">
 <meta property="article:author" content="Vector">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="Hexo">
@@ -238,7 +238,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-03 21:45:40" itemprop="dateModified" datetime="2020-03-03T21:45:40+08:00">2020-03-03</time>
+                <time title="修改时间：2020-03-03 22:15:08" itemprop="dateModified" datetime="2020-03-03T22:15:08+08:00">2020-03-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,6 +251,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -289,7 +296,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本人使用博客及建站有段时间了，也在不断努力学习。现把学到的知识进行下总结和分享，自我总结的同时也可以让更多人了解并熟悉这个过程。有不足的地方请大家多多指正。互相学习，不断进步！</p>
+        <p>本人使用博客及建站有段时间了，也在不断努力学习。一直使用大名鼎鼎的Next，还用过大神<a href="https://xaoxuu.com/" target="_blank" rel="noopener">xaoxuu</a>的<a href="https://github.com/xaoxuu/hexo-theme-volantis" target="_blank" rel="noopener">volantis</a>，获取到的知识越来越多，现把学到的知识进行下总结和分享，自我总结的同时也可以让更多人了解并熟悉这个过程，可以让更多的盆友拥有自己的博客空间~有不足的地方请大家多多指正。互相学习，不断进步！</p>
 <a id="more"></a>
 
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  本教程使用Coding Page作为教学案例，之前使用github Page，但众所周知的原因，在国内服务器的速度很是不理想，也试过用Cloudflare进行CDN加速，但效果终是不及国内云速度快。说白了还是qiong。</p>
@@ -352,6 +359,14 @@
     
     
     
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2020\03\03\Hexo博客搭建教程《二、主题美化》\" rel="bookmark">Hexo博客搭建教程《二、主题美化》</a></div>
+    </li>
+  </ul>
+
         <div class="reward-container">
   <div></div>
   <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
@@ -523,6 +538,17 @@
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.chingow.cn/" title="https:&#x2F;&#x2F;www.chingow.cn&#x2F;" rel="noopener" target="_blank">Chingow's Blog</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -550,12 +576,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">8k</span>
+    <span title="站点总字数">9k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">9 分钟</span>
+    <span title="站点阅读时长">10 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.2.0
   </div>
@@ -564,6 +590,26 @@
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
