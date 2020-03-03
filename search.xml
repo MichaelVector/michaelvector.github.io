@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Hexo博客搭建教程《二、主题美化》</title>
+      <link href="/2020/03/03/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E3%80%8A%E4%BA%8C%E3%80%81%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E3%80%8B/"/>
+      <url>/2020/03/03/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E3%80%8A%E4%BA%8C%E3%80%81%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96%E3%80%8B/</url>
+      
+        <content type="html"><![CDATA[<p>本教程基于<code>Hexo v4.2</code>和<code>Next v7.7</code>作为教学案例进行演示。</p><p>从第一篇建站后的主题美化，并进行自定义修改，可以让大家按照自己的想法进行美化改造。</p><a id="more"></a><h1 id="下载主题"><a href="#下载主题" class="headerlink" title="下载主题"></a>下载主题</h1><p>例如 <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next主题</a>，进入官网Github后，可以看到介绍下载内容。</p><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入hexo建站文件夹</span></span><br><span class="line">cd hexo</span><br><span class="line"><span class="comment"># 下载next主题到themes文件夹</span></span><br><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><h1 id="全局修改主题"><a href="#全局修改主题" class="headerlink" title="全局修改主题"></a>全局修改主题</h1><p>打开<code>/HexoBlog/_config.yml</code>，修改：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure><blockquote><p>注意：HexoBlog建站文档里会有两个_config.yml配置文件，各存在于：</p><ul><li>HexoBlog/_config.yml</li><li>HexoBlog/themes/next/_config.yml<br>其中，上面的配置文件是针对于全局Hexo的配置文档，例如博客名称、主题、链接、以及git保存链接。<br>下面这一个是针对next这个主题的具体配置信息，请勿混淆。</li></ul></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 博客 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo博客搭建教程《一、安装同步》</title>
       <link href="/2020/03/01/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E3%80%8A%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E5%90%8C%E6%AD%A5%E3%80%8B/"/>
       <url>/2020/03/01/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B%E3%80%8A%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85%E5%90%8C%E6%AD%A5%E3%80%8B/</url>
